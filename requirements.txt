@@ -1,0 +1,15 @@
+pip>=9
+setuptools>=26
+wheel>=0.29
+pandas
+numpy
+matplotlib
+sklearn
+pytest
+coverage
+flake8
+yapf
+python-gitlab
+twine
+joblib
+termcolor
