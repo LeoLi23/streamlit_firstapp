@@ -1,14 +1,12 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from bnk_py_files.trainer import random_search_clf,create_model_clf,evaluate,save_model
-from bnk_py_files.data import get_data,create_train_test_data
-from bnk_py_files.manage_db import *
+from manage_db import *
 import os
 import hashlib
 import joblib
 
-model = joblib.load("/Users/lianyang/BNK_Project/bnk_py_files/BNK_Model.joblib")
+model = joblib.load("/Users/lianyang/streamlit_firstapp/BNK_Model.joblib")
 features = ['CYCLE', 'AGE','HOME YEARS','BUS YEARS',
           'CF TO LOAN','COLL TO LOAN','AMOUNT GRANTED']
 def generate_hashes(password):
@@ -50,12 +48,12 @@ def show():
 
     safe_html="""
       <div style="background-color:#F4D03F;padding:10px >
-       <h2 style="color:white;text-align:center;"> It's a safe loan, you show give it</h2>
+       <h2 style="color:white;text-align:center;"> It's a safe loan</h2>
        </div>
         """
     danger_html="""
       <div style="background-color:#F08080;padding:10px >
-       <h2 style="color:black ;text-align:center;"> It's a risky loan, you shouldn't give it</h2>
+       <h2 style="color:black ;text-align:center;"> It's a risky loan</h2>
        </div>
     """
 
@@ -64,7 +62,6 @@ def show():
        <h2 style="color:#7D3C98;text-align:center;"> Loan needs second review</h2>
        </div>
     """
-    #model_choice = st.selectbox("Select Model:",['RandomForest'])
     if st.button("Predict"):
         CF_TO_LOAN = float(Cashflow)/float(AMOUNT_GRANTED)
         COLL_TO_LOAN = float(Collateral)/float(AMOUNT_GRANTED)

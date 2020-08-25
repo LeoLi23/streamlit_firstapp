@@ -13,3 +13,4 @@ python-gitlab
 twine
 joblib
 termcolor
+sqlite3
