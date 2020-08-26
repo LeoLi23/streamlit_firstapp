@@ -6,7 +6,7 @@ import os
 import hashlib
 import joblib
 
-model = joblib.load("/Users/lianyang/streamlit_firstapp/BNK_Model.joblib")
+model = joblib.load("BNK_Model.joblib")
 features = ['CYCLE', 'AGE','HOME YEARS','BUS YEARS',
           'CF TO LOAN','COLL TO LOAN','AMOUNT GRANTED']
 def generate_hashes(password):
