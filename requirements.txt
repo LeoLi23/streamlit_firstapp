@@ -13,3 +13,5 @@ python-gitlab
 twine
 joblib
 termcolor
+streamlit
+plotly
