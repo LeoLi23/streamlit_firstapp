@@ -113,7 +113,7 @@ def main():
                     st.map(df2)
                 if activity == "Plot":
                     st.subheader("Data Plot")
-                    df = pd.read_csv("/Users/lianyang/BNK_Project/bnk_py_files/data/merged.csv")
+                    df = pd.read_csv("merged.csv")
                     st.dataframe(df)
 
                     if st.checkbox("Area Chart"):
